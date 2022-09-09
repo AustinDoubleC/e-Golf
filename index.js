@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger)
+
 btnChatOpen = document.getElementById("chatOpen")
 chatbox = document.getElementById("chatbox")
 btnChatClose = document.getElementById("chatClose")
@@ -6,13 +8,27 @@ chatInput = document.getElementById("chatInput")
 
 btnChatClose.addEventListener("click",()=>{
     chatbox.style.transform = "translateX(600px)"
+    chatbox.style.opacity = 0
 })
 btnChatOpen.addEventListener("click",()=>{
     chatbox.style.transform = "translateX(-600px)"
+    chatbox.style.opacity = 1
 })
 btnSendChat.addEventListener("click",()=>{
     chatInput.value = ""
 })
+
+gsap.to("#cta-container",{
+    scrollTrigger:{
+        trigger:"#hero",
+        start:"bottom top",
+        scrub:1
+    },
+    opacity:1,
+    duration:0.01,
+    y:0
+})
+
 
 /*Carousel control*/
 let items = document.querySelectorAll('.carousel .carousel-item')
