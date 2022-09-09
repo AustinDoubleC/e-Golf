@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .navbar .navbar-nav .nav-link:hover{
   background-color: navy;
 }
@@ -14,3 +17,90 @@
 .dropdown a:hover{
   background-color: navy;
 }
+
+#hero{
+  background-image: url(images/new_cars-e_golf-hero-16_9-2500x1406-1.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  transform: translateY(-60px);
+  @media screen and (max-width:991px) {
+    transform: translateY(0px);
+  }  
+}
+
+.tall{
+  height:2000px;
+}
+
+
+/*others section - carousel small screen*/
+#others{
+  @media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+      display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+      display: block;
+    }
+  }
+  
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+  
+  /* others section medium and up screens */
+  @media (min-width: 768px) {
+  
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(33%);
+    }
+  
+    .carousel-inner .carousel-item-start.active, 
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-33%);
+    }
+  }
+  
+  .carousel-inner .carousel-item-end,
+  .carousel-inner .carousel-item-start { 
+    transform: translateX(0);
+  }
+}
+
+/*chat button*/
+#chatOpen{
+  position: fixed;
+  bottom:50px;
+  right: 25px;
+  z-index: 2;
+}
+/*chat box*/
+#chatbox{
+  width: 300px;
+  height: 400px;
+  position: fixed;
+  bottom:0px;
+  right: -600px;
+  transition: all .5s;
+  z-index: 3;
+  #chatClose{
+    transition: all 0.2s;
+  }
+  #chatClose:hover{
+    filter: invert(50%);
+  }
+  .chatSample{
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid #ccc;
+  }
+  @media screen and (max-width:576px){
+    width:100%;
+  }
+}
+
