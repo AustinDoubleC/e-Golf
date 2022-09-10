@@ -61,8 +61,13 @@ nav {
   opacity: 0;
 }
 
-.tall {
-  height: 2000px;
+.tab-content {
+  height: 387px;
+}
+@media screen and (max-width: 991px) {
+  .tab-content {
+    height: auto;
+  }
 }
 
 /*others section - carousel small screen*/

@@ -52,8 +52,12 @@ nav{
 #cta-container{
   opacity: 0;
 }
-.tall{
-  height:2000px;
+
+.tab-content{
+  height:387px;
+  @media screen and (max-width:991px) {
+    height: auto;
+  }
 }
 
 
@@ -170,4 +174,3 @@ nav{
     width:100%;
   }
 }
-
