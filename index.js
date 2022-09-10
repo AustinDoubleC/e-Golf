@@ -26,7 +26,6 @@ gsap.to("#cta-container",{
     },
     opacity:1,
     duration:0.01,
-    y:0
 })
 
 
