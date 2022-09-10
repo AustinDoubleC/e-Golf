@@ -1,10 +1,10 @@
 gsap.registerPlugin(ScrollTrigger)
 
-btnChatOpen = document.getElementById("chatOpen")
-chatbox = document.getElementById("chatbox")
-btnChatClose = document.getElementById("chatClose")
-btnSendChat = document.getElementById("btnSendChat")
-chatInput = document.getElementById("chatInput")
+const btnChatOpen = document.getElementById("chatOpen")
+const chatbox = document.getElementById("chatbox")
+const btnChatClose = document.getElementById("chatClose")
+const btnSendChat = document.getElementById("btnSendChat")
+const chatInput = document.getElementById("chatInput")
 
 btnChatClose.addEventListener("click",()=>{
     chatbox.style.transform = "translateX(600px)"
@@ -28,6 +28,39 @@ gsap.to("#cta-container",{
     duration:0.01,
 })
 
+/*Tab image control*/
+const performanceTab = document.getElementById("performance-tab")
+const measurementTab = document.getElementById("measurement-tab")
+const miscTab = document.getElementById("misc-tab")
+const specImg1 = document.getElementById("spec-img-1")
+const specImg2 = document.getElementById("spec-img-2")
+const specImg3 = document.getElementById("spec-img-3")
+
+performanceTab.addEventListener("click",()=>{
+    specImg1.style.display = "block"
+    specImg2.style.display = "none"
+    specImg3.style.display = "none"
+    specImg2.style.opacity = 0
+    specImg3.style.opacity = 0
+    setTimeout(()=>specImg1.style.opacity=1,50)
+})
+measurementTab.addEventListener("click",()=>{
+    specImg2.style.display = "block"
+    specImg1.style.display = "none"
+    specImg3.style.display = "none"
+    specImg1.style.opacity = 0
+    specImg3.style.opacity = 0
+    setTimeout(()=>specImg2.style.opacity=1,50)
+})
+miscTab.addEventListener("click",()=>{
+    specImg3.style.display = "block"
+    specImg1.style.display = "none"
+    specImg2.style.display = "none"
+    specImg1.style.opacity = 0
+    specImg2.style.opacity = 0
+    setTimeout(()=>specImg3.style.opacity=1,50)
+})
+
 
 /*Carousel control*/
 let items = document.querySelectorAll('.carousel .carousel-item')
@@ -45,3 +78,20 @@ let items = document.querySelectorAll('.carousel .carousel-item')
         next = next.nextElementSibling
     }
 })
+
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    forms.forEach(form=>{
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+ 

@@ -60,37 +60,55 @@
           <h4 class="fw-bold mb-lg-5">£31,075</h4>
         </div>
         <div class="col-6 col-lg-12">
-          <button class="btn btn-primary mb-2 w-100">Book a Test Drive</button>
-          <button class="btn btn-primary w-100">Order Now</button>
+          <button type="button" class="btn btn-primary mb-2 w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book a Test Drive</button>
+          <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#orderModal">Order Now</button>
         </div>
       </div>
       
     </section>
-    <!--Sticky CTA-->
-    <div id="cta-container" class="d-flex bg-secondary sticky-top py-2">
-      <div class="w-50 text-center text-white">Book a Test Drive</div>
-      <div class="w-50 text-center text-white">Order Now</div>
-    </div>
+    <!--Highlight section-->
+    <section id="highlight">
+      <div class="container d-flex flex-column flex-lg-row mt-5">
+        <div class="col d-flex flex-column align-items-center">
+          <p>Electric range combined</p>
+          <h3 class="fw-bold">144 miles (WLTP)</h3>
+        </div>
+        <div class="col mt-5 mt-lg-0 d-flex flex-column align-items-center">
+          <p>Top Speed</p>
+          <h3 class="fw-bold">93 mph</h3>
+        </div>
+        <div class="col mt-5 mt-lg-0 d-flex flex-column align-items-center">
+          <p>Charge time</p>
+          <h3 class="fw-bold">80% - 45 minutes</h3>
+        </div>
+        <div class="col mt-5 mt-lg-0 d-flex flex-column align-items-center">
+          <p>0 - 60mph</p>
+          <h3 class="fw-bold">9.6 seconds</h3>
+        </div>
+      </div>
+    </section>
     <!--Spec section-->
-    <section id="id">
-      <div class="container d-flex flex-column flex-lg-row">
+    <section id="spec">
+      <div class="container d-flex flex-column flex-lg-row mt-5">
         <!--Car image-->
-        <div class="col-12 col-lg-6">
-          <img class="w-100" src="images/new_cars-e_golf-lights-4_3-2500x1865.webp" alt="VW e-golf">
+        <div class="col-12 col-lg-6 ">
+          <img class="w-100" id="spec-img-1" src="images/new_cars-e_golf-lights-4_3-2500x1865.webp" alt="VW e-golf">
+          <img class="w-100" id="spec-img-2" src="images/new_cars-e_golf-exterior-4_3-2500x1865.webp" alt="VW e-golf">
+          <img class="w-100" id="spec-img-3" src="images/new_cars-e_golf-interior-4_3-2500x1865.webp" alt="VW e-golf">
         </div>
         <!--Spec tab container-->
         <div class="col-12 col-lg-6 p-3">
-          
+
           <h3 class="text-center fw-bold">e-Golf Specs</h3>
           <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
             <li class="nav-item col-4" role="presentation">
-              <button class="nav-link active text-black w-100 fw-bold" id="performance-tab" data-bs-toggle="tab" data-bs-target="#performance-tab-pane" type="button" role="tab" aria-controls="performance-tab-pane" aria-selected="true">performance</button>
+              <button class="nav-link active text-black w-100 fw-bold px-0" id="performance-tab" data-bs-toggle="tab" data-bs-target="#performance-tab-pane" type="button" role="tab" aria-controls="performance-tab-pane" aria-selected="true">performance</button>
             </li>
             <li class="nav-item col-4" role="presentation">
-              <button class="nav-link text-black w-100 fw-bold" id="measurement-tab" data-bs-toggle="tab" data-bs-target="#measurement-tab-pane" type="button" role="tab" aria-controls="measurement-tab-pane" aria-selected="false">measurement</button>
+              <button class="nav-link text-black w-100 fw-bold px-0" id="measurement-tab" data-bs-toggle="tab" data-bs-target="#measurement-tab-pane" type="button" role="tab" aria-controls="measurement-tab-pane" aria-selected="false">measurement</button>
             </li>
             <li class="nav-item col-4" role="presentation">
-              <button class="nav-link text-black w-100 fw-bold" id="misc-tab" data-bs-toggle="tab" data-bs-target="#misc-tab-pane" type="button" role="tab" aria-controls="misc-tab-pane" aria-selected="false">misc</button>
+              <button class="nav-link text-black w-100 fw-bold px-0" id="misc-tab" data-bs-toggle="tab" data-bs-target="#misc-tab-pane" type="button" role="tab" aria-controls="misc-tab-pane" aria-selected="false">misc</button>
             </li>
           </ul>
           <div class="tab-content border" id="myTabContent">
@@ -99,12 +117,12 @@
                 <!--left column-->
                 <div class="col-12 col-lg-6">
                   <div class="d-flex justify-content-between">
-                    <p>Acceleration 0 - 60 miles/h</p>
+                    <p>Acceleration 0 - 60 mph</p>
                     <p class="fw-bold">9.6 sec</p>
                   </div>
                   <div class="d-flex justify-content-between">
                     <p>Top Speed</p>
-                    <p class="fw-bold">150 km/h</p>
+                    <p class="fw-bold">93 mph</p>
                   </div>
                   <div class="d-flex justify-content-between">
                     <p>Top Speed</p>
@@ -446,6 +464,111 @@
     <footer class="bg-secondary text-white text-center py-2">
       Copywright 2022 Premium Volkswagen
     </footer>
+    <!--fix position components-->
+    <!-- Modals -->
+    <!--booking modal-->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form class="needs-validation" novalidate>
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookingModalLabel">Book a test drive</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3 d-flex">
+              <label for="booking-first-name" class="col-form-label col-3">First Name</label>
+              <input type="text" class="form-control" id="booking-first-name" required>
+              <p class="invalid-feedback">Please input your first name</p>
+            </div>
+            <div class="mb-3 d-flex">
+              <label for="booking-last-name" class="col-form-label col-3">Last Name</label>
+              <input type="text" class="form-control" id="booking-last-name" required>
+              <p class="invalid-feedback">Please input your last name</p>
+            </div>
+            <div class="mb-3 d-flex">
+              <label for="booking-email" class="col-form-label col-3">Email</label>
+              <input type="email" class="form-control" id="booking-email" required>
+              <p class="invalid-feedback">Please input valid email</p>
+            </div>
+            <div class="mb-3 d-flex">
+              <label for="booking-tel" class="col-form-label col-3">Phone</label>
+              <input type="number" class="form-control" id="booking-tel" required>
+              <p class="invalid-feedback">Please input your phone number</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" required>Send</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--order modal-->
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form class="needs-validation" novalidate>
+            <div class="modal-header">
+              <h5 class="modal-title" id="orderModalLabel">Reserve an e-Golf</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3 d-flex">
+                <label for="order-first-name" class="col-form-label col-3">First Name</label>
+                <input type="text" class="form-control" id="order-first-name" required>
+                <p class="invalid-feedback">Please input your first name</p>
+              </div>
+              <div class="mb-3 d-flex">
+                <label for="order-last-name" class="col-form-label col-3">Last Name</label>
+                <input type="text" class="form-control" id="order-last-name" required>
+                <p class="invalid-feedback">Please input your last name</p>
+              </div>
+              <div class="mb-3 d-flex">
+                <label for="order-email" class="col-form-label col-3">Email</label>
+                <input type="email" class="form-control" id="order-email" required>
+                <p class="invalid-feedback">Please input valid email</p>
+              </div>
+              <div class="mb-3 d-flex">
+                <label for="order-tel" class="col-form-label col-3">Phone</label>
+                <input type="number" class="form-control" id="order-tel" required>
+                <p class="invalid-feedback">Please input your phone number</p>
+              </div>
+              <hr>
+              <div class="d-flex justify-content-between">
+                <h6 class="fw-bold">Reserve fee</h6>
+                <h6 class="fw-bold">£99</h6>
+              </div>
+              <ul>
+                <li>Reserve this car now for just £99</li>
+                <li>Deposit is fully refundable</li>
+                <p class="fw-bold text-center w-100">or</p>
+                <li>Build your deal first, then reserve</li>
+                <li>Value your part exchange</li>
+                <li>Get a customised finance quote</li>
+                <li>Reserve for £99 when you’re ready</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Reserve now</button>
+              <button type="submit" class="btn btn-success">Build your deal</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--bottom cta-->
+    <div id="cta-container" class="d-flex bg-secondary sticky-bottom border-top">
+      <div class="w-50 text-center text-white py-2 cta-btn" type="button" data-bs-toggle="modal" data-bs-target="#bookingModal">Book a Test Drive</div>
+      <div class="w-50 text-center text-white border-start py-2 cta-btn" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Order Now</div>
+    </div>
+    <!--sidebar-->
+    <div id="sidebar">
+      <a href="#spec">spec</a>
+      <a href="#others">others</a>
+    </div>
     <!--Chat button-->
     <div id="chatOpen" class="btn btn-success chatButton">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chat-dots" viewBox="0 0 16 16">
