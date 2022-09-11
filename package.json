@@ -1,0 +1,22 @@
+{
+  "name": "e-golf",
+  "version": "1.0.0",
+  "description": "It is a new Volkswagen e-Golf car page for client called \"Premium Volkswagen\".",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AustinDoubleC/e-Golf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AustinDoubleC/e-Golf/issues"
+  },
+  "homepage": "https://github.com/AustinDoubleC/e-Golf#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.1"
+  }
+}
