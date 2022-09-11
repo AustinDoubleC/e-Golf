@@ -227,6 +227,6 @@ nav {
 }
 @media screen and (max-height: 400px) {
   #chatbox {
-    height: 100vh;
+    height: calc(100vh - 50px);
   }
 }/*# sourceMappingURL=styles.css.map */
