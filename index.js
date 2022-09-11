@@ -63,7 +63,7 @@ miscTab.addEventListener("click",()=>{
 
 
 /*Carousel control*/
-let items = document.querySelectorAll('.carousel .carousel-item')
+const items = document.querySelectorAll('.carousel .carousel-item')
 
 		items.forEach((el) => {
 			const minPerSlide = 4;
@@ -79,19 +79,31 @@ let items = document.querySelectorAll('.carousel .carousel-item')
     }
 })
 
+//modal form validation
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+const forms = document.querySelectorAll('.needs-validation')
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    forms.forEach(form=>{
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
+// Loop over them and prevent submission
+forms.forEach(form=>{
+    form.addEventListener('submit', event => {
+    if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+    }
 
-        form.classList.add('was-validated')
-      }, false)
-    })
+    form.classList.add('was-validated')
+    }, false)
+})
+
+//sidebar
+const sideBtnFeature = document.getElementById("side-btn-feature")
+const sideBtnSpec = document.getElementById("side-btn-spec")
+const sideBtnOthers = document.getElementById("side-btn-others")
+const sideFeature = document.getElementById("side-feature")
+const sideSpec = document.getElementById("side-spec")
+const sideOthers = document.getElementById("side-others")
+
+sideBtnFeature.addEventListener("click",()=>{
+    sideFeature.style.display="block"
+})
  
