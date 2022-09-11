@@ -216,4 +216,7 @@ nav{
   @media screen and (max-width:576px){
     width:100%;
   }
+  @media screen and (max-height:400px) {
+    height:100vh;
+  }
 }
