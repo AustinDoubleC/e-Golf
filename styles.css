@@ -67,12 +67,22 @@ nav {
 }
 #cta-container .cta-btn:hover {
   transition: all 0.2s;
-  background-color: #555;
+  background-color: navy;
 }
 
 /*feature section*/
 .feature-icon-title {
   font-size: 14px;
+}
+
+/*desc section*/
+.desc-title-content {
+  transform: translateY(-175px);
+}
+@media screen and (max-width: 991px) {
+  .desc-title-content {
+    transform: translateY(0px);
+  }
 }
 
 /*Spec section*/
@@ -99,6 +109,9 @@ nav {
   #others .carousel-inner .carousel-item > div:first-child {
     display: block;
   }
+}
+#others .others-content {
+  height: 230px;
 }
 #others .carousel-inner .carousel-item.active,
 #others .carousel-inner .carousel-item-next,
@@ -165,31 +178,6 @@ nav {
   transition: all 0.2s;
 }
 
-/*sidebar
-#sidebar{
-  position: fixed;
-
-  height:200px;
-  top:calc(50% - 100px);
-  left: 10px;
-  z-index: 3;
-  a{
-    display: flex;
-    text-decoration: none;
-    color: #0d6efd;
-    p{
-      display: none;
-    }
-    p.show{
-      display: block;
-    }
-    &:hover{
-      color:red;
-    }
-  }
-
-}
-*/
 /*chat button*/
 #chatOpen {
   position: fixed;
