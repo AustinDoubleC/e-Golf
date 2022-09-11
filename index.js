@@ -5,19 +5,16 @@ const chatbox = document.getElementById("chatbox")
 const btnChatClose = document.getElementById("chatClose")
 const btnSendChat = document.getElementById("btnSendChat")
 const chatInput = document.getElementById("chatInput")
+const performanceTab = document.getElementById("performance-tab")
+const measurementTab = document.getElementById("measurement-tab")
+const miscTab = document.getElementById("misc-tab")
+const specImg1 = document.getElementById("spec-img-1")
+const specImg2 = document.getElementById("spec-img-2")
+const specImg3 = document.getElementById("spec-img-3")
+const items = document.querySelectorAll('.carousel .carousel-item')
+const forms = document.querySelectorAll('.needs-validation')
 
-btnChatClose.addEventListener("click",()=>{
-    chatbox.style.transform = "translateX(600px)"
-    chatbox.style.opacity = 0
-})
-btnChatOpen.addEventListener("click",()=>{
-    chatbox.style.transform = "translateX(-600px)"
-    chatbox.style.opacity = 1
-})
-btnSendChat.addEventListener("click",()=>{
-    chatInput.value = ""
-})
-
+//Animation
 gsap.to("#cta-container",{
     scrollTrigger:{
         trigger:"#hero",
@@ -28,14 +25,88 @@ gsap.to("#cta-container",{
     duration:0.01,
 })
 
-/*Tab image control*/
-const performanceTab = document.getElementById("performance-tab")
-const measurementTab = document.getElementById("measurement-tab")
-const miscTab = document.getElementById("misc-tab")
-const specImg1 = document.getElementById("spec-img-1")
-const specImg2 = document.getElementById("spec-img-2")
-const specImg3 = document.getElementById("spec-img-3")
+gsap.from(".hero-content",{
+    scrollTrigger:{
+        trigger:".hero-content",
+        start:"top bottom",
+    },
+    x:300,
+    opacity:0,
+    duration:0.5,
+})
 
+gsap.from("#highlight",{
+    scrollTrigger:{
+        trigger:"#highlight",
+        start:"top bottom",
+    },
+    y:100,
+    opacity:0,
+    duration:0.5,
+})
+
+gsap.from("#feature",{
+    scrollTrigger:{
+        trigger:"#feature",
+        start:"top bottom",
+    },
+    y:100,
+    opacity:0,
+    duration:0.5,
+})
+
+gsap.from("#desc1",{
+    scrollTrigger:{
+        trigger:"#desc1",
+        start:"top bottom",
+    },
+    y:100,
+    opacity:0,
+    duration:0.5,
+})
+
+gsap.from("#desc2",{
+    scrollTrigger:{
+        trigger:"#desc2",
+        start:"top bottom",
+    },
+    y:100,
+    opacity:0,
+    duration:0.5,
+})
+
+gsap.from("#desc3",{
+    scrollTrigger:{
+        trigger:"#desc3",
+        start:"top bottom",
+    },
+    y:100,
+    opacity:0,
+    duration:0.5,
+})
+
+gsap.from(".desc-title-content",{
+    scrollTrigger:{
+        trigger:".desc-title-content",
+        start:"top bottom",
+    },
+    y:-75,
+    opacity:0,
+    duration:0.5,
+})
+
+gsap.from("#spec",{
+    scrollTrigger:{
+        trigger:"#spec",
+        start:"top bottom",
+    },
+    y:100,
+    opacity:0,
+    duration:0.5,
+})
+
+
+/*Tab image control*/
 performanceTab.addEventListener("click",()=>{
     specImg1.style.display = "block"
     specImg2.style.display = "none"
@@ -61,28 +132,35 @@ miscTab.addEventListener("click",()=>{
     setTimeout(()=>specImg3.style.opacity=1,50)
 })
 
-
 /*Carousel control*/
-const items = document.querySelectorAll('.carousel .carousel-item')
-
-		items.forEach((el) => {
-			const minPerSlide = 4;
-			let next = el.nextElementSibling
-			for (let i=1; i<minPerSlide; i++) {
-				if (!next) {
-            // wrap carousel by using first child
-            next = items[0]
-        }
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
+items.forEach((el) => {
+    const minPerSlide = 4;
+    let next = el.nextElementSibling
+    for (let i=1; i<minPerSlide; i++) {
+        if (!next) {
+    // wrap carousel by using first child
+    next = items[0]
+    }
+    let cloneChild = next.cloneNode(true)
+    el.appendChild(cloneChild.children[0])
+    next = next.nextElementSibling
     }
 })
 
-//modal form validation
-// Fetch all the forms we want to apply custom Bootstrap validation styles to
-const forms = document.querySelectorAll('.needs-validation')
+//Chatbox control
+btnChatClose.addEventListener("click",()=>{
+    chatbox.style.transform = "translateX(600px)"
+    chatbox.style.opacity = 0
+})
+btnChatOpen.addEventListener("click",()=>{
+    chatbox.style.transform = "translateX(-600px)"
+    chatbox.style.opacity = 1
+})
+btnSendChat.addEventListener("click",()=>{
+    chatInput.value = ""
+})
 
+//modal form validation
 // Loop over them and prevent submission
 forms.forEach(form=>{
     form.addEventListener('submit', event => {
@@ -95,15 +173,4 @@ forms.forEach(form=>{
     }, false)
 })
 
-//sidebar
-const sideBtnFeature = document.getElementById("side-btn-feature")
-const sideBtnSpec = document.getElementById("side-btn-spec")
-const sideBtnOthers = document.getElementById("side-btn-others")
-const sideFeature = document.getElementById("side-feature")
-const sideSpec = document.getElementById("side-spec")
-const sideOthers = document.getElementById("side-others")
-
-sideBtnFeature.addEventListener("click",()=>{
-    sideFeature.style.display="block"
-})
  

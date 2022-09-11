@@ -1,10 +1,9 @@
 //customer variables
 $light: #e9ecef;
+$primary:#187a93;
 
 //import bootstrap
 @import './node_modules/bootstrap/scss/bootstrap.scss';
-
-
 
 html {
   scroll-behavior: smooth;
@@ -39,7 +38,7 @@ nav{
   background-size: cover;
   height: 550px;
   .hero-content{
-    opacity: 0.8;
+    opacity: 0.9;
   }
   @media screen and (max-width:420px) {
     background-size: 180%;
@@ -98,6 +97,12 @@ nav{
 
 /*others section - carousel small screen*/
 #others{
+  .carousel-control-prev,
+  .carousel-control-next{
+    height: 50px;
+    width: 50px;
+    transform: translateY(150px);
+  }
   @media (max-width: 767px) {
     .carousel-inner .carousel-item > div {
       display: none;
@@ -201,6 +206,7 @@ nav{
   }
   #chatClose:hover{
     filter: invert(50%);
+    cursor: pointer;
   }
   .chatSample{
     border-radius: 10px;
@@ -213,4 +219,14 @@ nav{
   @media screen and (max-height:400px) {
     height:calc(100vh - 50px);
   }
+}
+
+//hide arrow for number input
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
 }
